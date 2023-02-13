@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/save}"
+      th:method="post"
+      th:object="${user}">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">username</label>
+        <input type="text" th:field="*{username}" class="form-control" id="exampleInputEmail1"
+               aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">password</label>
+        <input type="password" th:field="*{password}" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn--md" value="add">
+        <img src="https://ltdfoto.ru/images/2023/02/04/17.png" alt="17.png" border="0" height="100" />
+    </button>
+</form>
+</body>
+</html>

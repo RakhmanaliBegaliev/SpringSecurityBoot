@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    </style>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+    </tr>
+    <tr>
+        <tr th:each="user:${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+    </tr>
+    </tbody>
+    <button th:href="/saveUser" name="ADD" sec:authorize="hasRole('ADMIN')"></button>
+</table>
+</body>
+</html>
